@@ -1,6 +1,7 @@
 package oit.is.team5.lec4.team5lec4.controller;
 
 import java.security.Principal;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -53,6 +54,15 @@ public class Sample41Controller {
 
   @GetMapping("/sample4/step5")
   public String sample45() {
+    return "sample45.html";
+  }
+
+  @PostMapping("/sample4/step5")
+  public String sample45post(@RequestParam String chamberName, ModelMap model, Principal prin) {
+    ArrayList<Chamber> chambers = chamberMapper.selectAllByChamberName(chamberName);
+
+    model.addAttribute("chamber5", chambers);
+
     return "sample45.html";
   }
 }
