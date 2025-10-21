@@ -7,8 +7,13 @@
 </head>
 
 <body>
-  <h1>Authorized! <span sec:authentication="name"></span>
-  </h1>
+  <h1>Authorized! <span sec:authentication="name"></span></h1>
+  <div><a href="/sample4/step2/1">小屋に最初に入室した人を1人表示する</a></div>
+  <th:block th:if="${chamber != null}">
+    <span>入室者: [[${chamber.getUserName()}]]</span>
+    <span>小屋名: [[${chamber.getChamberName()}]]</span>
+    <br>
+  </th:block>
   <a href="/logout">ログアウト</a>
 </body>
 
