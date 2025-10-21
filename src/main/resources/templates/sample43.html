@@ -9,6 +9,20 @@
 <body>
   <h1>Authorized! <span sec:authentication="name"></span>
   </h1>
+
+  <h2>入室する小屋名を入力してください</h2>
+  <form action="#" th:action="@{/sample4/step3}" method="post">
+    <input type="text" id="chamberName" name="chamberName">
+    <input type="submit" value="入室">
+  </form>
+
+  <th:block th:if="${chamber != null}">
+    <span>入室者: [[${chamber.getUserName()}]]</span>
+    <span>小屋名: [[${chamber.getChamberName()}]]</span>
+  </th:block>
+
+  <br>
+
   <a href="/logout">ログアウト</a>
 </body>
 
