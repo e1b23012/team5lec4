@@ -50,4 +50,9 @@ public class Sample41Controller {
 
     return "sample43.html";
   }
+
+  @GetMapping("/sample4/step5")
+  public String sample45() {
+    return "sample45.html";
+  }
 }
